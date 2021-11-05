@@ -62,9 +62,9 @@ namespace ThAmCo.Events.Data
 
                 builder.Entity<GuestBooking>().HasData(
                     new GuestBooking { CustomerId = 1, EventId = 1, Attended = true },
-                    new GuestBooking { CustomerId = 2, EventId = 1, Attended = false },
+                    new GuestBooking { CustomerId = 2, EventId = 1, Attended = true },
                     new GuestBooking { CustomerId = 1, EventId = 2, Attended = false },
-                    new GuestBooking { CustomerId = 3, EventId = 2, Attended = false }
+                    new GuestBooking { CustomerId = 3, EventId = 2, Attended = true }
                 );
             }
         }

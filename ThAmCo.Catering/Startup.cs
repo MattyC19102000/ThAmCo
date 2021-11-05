@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ThAmCo.Catering.Data;
 
 namespace ThAmCo.Catering
 {
@@ -25,6 +26,8 @@ namespace ThAmCo.Catering
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            // adding the db context to the services allows the host to resolve CateringDbContext
+            services.AddDbContext<CateringDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -31,7 +31,6 @@ namespace ThAmCo.Events
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
             services.AddDbContext<EventsDbContext>(options =>
             {
                 var cs = Configuration.GetConnectionString("EventsSqlConnection");
