@@ -96,10 +96,11 @@ namespace ThAmCo.Catering.Controllers
         }
 
         // DELETE: api/MenuFoodItems/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<MenuFoodItem>> DeleteMenuFoodItem(int id)
+        // Modified to {menuId}/{foodItemId} to pass in two values to search for a composite key and delete it
+        [HttpDelete("{menuId}/{foodItemId}")]
+        public async Task<ActionResult<MenuFoodItem>> DeleteMenuFoodItem(int menuId, int foodItemId)
         {
-            var menuFoodItem = await _context.MenuFoodItem.FindAsync(id);
+            var menuFoodItem = await _context.MenuFoodItem.FindAsync(menuId, foodItemId);
             if (menuFoodItem == null)
             {
                 return NotFound();

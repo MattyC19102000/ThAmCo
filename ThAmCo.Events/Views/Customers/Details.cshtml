@@ -34,11 +34,11 @@
         </dt>
         @*Using a for each loop to insert data for booking and attendance*@
         <dd>
-            @foreach (var item in Model.Bookings)
+            @foreach (var booking in Model.Bookings)
             {
             <dl>
-                <dd> Event Name: @Html.DisplayFor(model => item.Event.Title)</dd>
-                <dd> Attendance: @Html.DisplayFor(model => item.Attended)</dd>
+                <dd> Event Name: @Html.DisplayFor(model => booking.Event.Title)</dd>
+                <dd> Attendance: @Html.DisplayFor(model => booking.Attended)</dd>
             </dl>
             }
         </dd>
